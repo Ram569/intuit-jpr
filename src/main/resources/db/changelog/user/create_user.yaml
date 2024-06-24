@@ -1,0 +1,39 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  1
+       author:  ramoji
+       changes:
+         -  createTable:
+              schemaName:  public
+              tableName:  users
+              columns:
+                - column:
+                      name: id
+                      type: int
+                      autoIncrement: true
+                      constraints:
+                        primaryKey: true
+                -  column:
+                     name:  username
+                     type:  varchar(128)
+                     constraints:
+                       unique: true
+                       nullable: false
+                -  column:
+                     name:  password
+                     type:  varchar(255)
+                     constraints:
+                       nullable: false
+  -  changeSet:
+       id:  2
+       author:  ramoji
+       changes:
+         -  insert:
+              tableName: users
+              columns:
+                - column:
+                    name: username
+                    value: admin
+                - column:
+                    name: password
+                    value: '{acJI/iRCosbmgNG+ejDPlg6c9AM6udu7c3GnOCF02Ao=}54d0be5c0bab3fb8e20a479c4a16c643'

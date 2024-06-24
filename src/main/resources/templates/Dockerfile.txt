@@ -1,0 +1,6 @@
+FROM --platform=linux/amd64 openjdk:17-jdk-alpine
+RUN mkdir -p /opt/app
+WORKDIR /opt/app
+EXPOSE 8080
+COPY build/libs/[(${projectName})]-0.0.1-SNAPSHOT.jar [(${projectName})].jar
+ENTRYPOINT ["sh", "-c", "java -jar [(${projectName})].jar"]
